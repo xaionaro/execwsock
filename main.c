@@ -107,12 +107,12 @@ int main(int argc, char *argv[])
 
 	{ /* dropping privileges */
 		if (getuid() == 0) {
-			if (setuid(UID)) {
-				fprintf(stderr, "Got error while setuid(%i): %s.\n", UID, strerror(errno));
-				exit(errno);
-			}
 			if (setgid(GID)) {
 				fprintf(stderr, "Got error while setgid(%i): %s.\n", GID, strerror(errno));
+				exit(errno);
+			}
+			if (setuid(UID)) {
+				fprintf(stderr, "Got error while setuid(%i): %s.\n", UID, strerror(errno));
 				exit(errno);
 			}
 		}
