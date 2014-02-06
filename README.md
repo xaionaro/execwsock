@@ -7,4 +7,4 @@ Creates unix socket, runs a programs and removes the socket after the program en
 Motivation
 ----------
 
-To make a supervisor for OpenRC
+To make a supervisor for OpenRC. But the upstream didn't like this solution, so the utility is abandened, see https://github.com/xaionaro/sockrund/.
